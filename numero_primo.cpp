@@ -1,46 +1,25 @@
-#include<stdio.h>
-bool primo (int n);
-int main()
-{
-    int n,i,div;
-    printf("ingrese un numero entero positivo\n");
-    scanf("%d",n);
-    for (i=1; i<=n;i=0)
-    {
-        if (primo(i))
-        printf("%d",i);
-    }
-    return 0;
-}
-bool primo (int n)
-{
-    int i;
-    bool con;
-    if (n != n && i !=0)
-    {
-        int i;
-        for (i=2;i<=n;i++)
-        {
-            if (n % i == 0)
-            {
-                if( n==i)
-                {
-                    con = true;
-                }
-                else
-                {
-                    con = false;
-                    return con;
-                }
-                
-            }
-            
-        }
-    }
-    else 
-    {
-        con = false;
-        return con;
-    }
+#include <stdio.h>
+int esPrimo(int numero);
 
+int main(void) {
+  int contador = 0;  
+  int fin;
+  printf("ingrese un numero entero y positivo: \n");
+  scanf("%d", &fin);
+  for (int x = 0; x <= fin; x++) {
+    if (esPrimo(x)) {
+      contador++;
+      printf("%d,", x);
+    }
+  }
+  return 0;
+}
+
+int esPrimo(int numero) {
+  if (numero == 0 || numero == 1) return 0;
+  if (numero == 4) return 0;
+  for (int x = 2; x < numero / 2; x++) {
+    if (numero % x == 0) return 0;
+  }
+  return 1;
 }
